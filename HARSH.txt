@@ -1,0 +1,76 @@
+                                                                                     BEEE LAB EVALUATION
+
+
+AIM  : DESIGN AUTOMATIC LED DIWALI LIGHTS(CONSISTING OF 6 LED'S) SUCH THAT IT ONLY WORKS DURING NIGHT AND CAN GENERATE TWO PATTERNS WHICH CAN BE TOGGLED WITH A SWITCH 
+                A- PATTERN 1  LED BLINKS WITHA FREQUENCY OF 500 MILLISEC
+                B PATTERN 2 LED BLINKS WITH A FREQUENCY 1 SEC.
+
+APPARATUS REQUIRED :-    1. 6 LED
+                         2. ARDUINO UNO
+                         3. BREADBOARD
+                         4. 2 SWITCH
+
+THEORY : 
+	Stands for "Light-Emitting Diode." An LED is an electronic device that emits light when an electrical current is passed through it. 
+        Early LEDs produced only red light, but modern LEDs can produce several different colors, including red, green, and blue (RGB) light.
+	Recent advances in LED technology have made it possible for LEDs to produce white light as well.
+
+	LEDs are commonly used for indicator lights (such as power on/off lights) on electronic devices. 
+	They also have several other applications, including electronic signs, clock displays, and flashlights. 
+	Since LEDs are energy efficient and have a long lifespan (often more than 100,000 hours), they have begun to replace traditional light bulbs in several areas. 
+	Some examples include street lights, the red lights on cars, and various types of decorative lighting. 
+	You can typically identify LEDs by a series of small lights that make up a larger display. 
+	For example, if you look closely at a street light, you can tell it is an LED light if each circle is comprised of a series of dots.
+
+         When the switch is pressed then led will glow in pattern 1 and when the switch is released then led will glow in pattern 2.
+         So now let us check how arduino code runs .
+         When the switch is pressed then a high signal is given to digital pin of arduino , then there is a 'if else' statement 
+         that if arduino senses a high signal then it send signal to the other pin to start blinking of led in pattern 1 else in pattern 2.
+          
+
+STEPS:- 
+	 1. First make the circuit according to the diagram 
+	 2. Then code it .
+         int i=0;
+         void setup()
+	{
+	  pinMode(8,INPUT);
+	  pinMode(9,INPUT);
+	  pinMode(1, OUTPUT);
+	  pinMode(2, OUTPUT);
+	  pinMode(3, OUTPUT);
+	  pinMode(4, OUTPUT);
+	  pinMode(5, OUTPUT);
+	  pinMode(6, OUTPUT);
+	  }
+
+	void loop()
+	{
+	  if(digitalRead(8)==HIGH)
+	  {
+	    for(i=1;i<=6;i++)
+	    {
+	  digitalWrite(i, HIGH);
+	  delay(500); 
+	  digitalWrite(i, LOW);
+	  delay(500); 
+    }
+  }
+    else if(digitalRead(9)==HIGH)
+      {
+      for(i=1;i<=6;i++)
+      {
+	 digitalWrite(i, HIGH);
+	  delay(1000); 
+	  digitalWrite(i, LOW); 
+	  delay(1000); 
+
+    }
+}
+}
+        
+CONLUSION : It will make you to make this type of stuffs according to your requirements .
+
+
+https://github.com/harshraj581/BEEE-CU-EVALUATION.git
+  
